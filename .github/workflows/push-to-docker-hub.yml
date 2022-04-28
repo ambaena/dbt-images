@@ -23,7 +23,7 @@ jobs:
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
         
     - name: docker built with tag
-      run: docker build . --file Dockerfile --tag ambaena/dbt-redshift:$(grep -e "dbt-core==" Dockerfile | sed -e 's/.*==//' | cut -d ' ' -f1)
+      run: docker build . --file Dockerfile --tag ambaena/dbt-images:$(grep -e "dbt-core==" Dockerfile | sed -e 's/.*==//' | cut -d ' ' -f1)
       
     - name: docker push
-      run: docker push ambaena/dbt-redshift
+      run: docker push ambaena/dbt-images
