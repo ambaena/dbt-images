@@ -10,14 +10,6 @@ RUN pip install dbt-core==1.0.3 && \
     pip install dbt-redshift==1.0.0 && \
     pip install sqlfluff-templater-dbt==0.11.2
 
-# Add dbt user
-RUN useradd -ms /bin/bash dbt
-
-USER dbt
-
-# Create app directory
-WORKDIR /home/dbt/app
-
 # Check version installed
 CMD ["dbt", "--version"]
 
