@@ -4,8 +4,12 @@ name: Push to Docker Hub.
 on:
   push:
     branches: [ master ]
+    paths:
+      - 'Dockerfile'
   pull_request:
     branches: [ master ]
+    paths:
+      - 'Dockerfile'
 
 jobs:
 
