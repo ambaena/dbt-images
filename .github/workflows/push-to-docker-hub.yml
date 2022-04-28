@@ -26,4 +26,4 @@ jobs:
       run: docker build . --file Dockerfile --tag ambaena/dbt-images:$(grep -e "dbt-core==" Dockerfile | sed -e 's/.*==//' | cut -d ' ' -f1)
       
     - name: docker push
-      run: docker push ambaena/dbt-images
+      run: docker push ambaena/dbt-images:$(grep -e "dbt-core==" Dockerfile | sed -e 's/.*==//' | cut -d ' ' -f1)
