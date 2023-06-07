@@ -13,4 +13,4 @@ RUN pip install dbt-core==1.0.3 && \
 # Check version installed
 CMD ["dbt", "--version"]
 
-ENTRYPOINT ["/bin/bash"]
+ENTRYPOINT ["/bin/bash", "-l", "-c"]
